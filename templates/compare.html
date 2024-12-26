@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Ideas</title>
+    <style>
+        /* Inline CSS for styling */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .idea-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 800px;
+        }
+        .idea-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 45%;
+            padding: 20px;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .idea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .idea-card p {
+            font-size: 18px;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .idea-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .idea-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+    <script>
+        function choose(choice) {
+            document.getElementById('choice-input').value = choice;
+            document.getElementById('choice-form').submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Which Idea Do You Prefer?</h1>
+    <form id="choice-form" method="post">
+        <input type="hidden" id="choice-input" name="choice" value="">
+    </form>
+    <div class="idea-container">
+        <div class="idea-card" onclick="choose('current')">
+            <p>{{ idea1 }}</p>
+        </div>
+        <div class="idea-card" onclick="choose('mid')">
+            <p>{{ idea2 }}</p>
+        </div>
+    </div>
+    <footer>
+        Click on the idea you prefer.
+    </footer>
+</body>
+</html>

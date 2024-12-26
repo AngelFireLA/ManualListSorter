@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Prioritized Ideas</title>
+    <style>
+        /* Inline CSS for styling */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        ol {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            list-style-position: inside;
+        }
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            font-size: 18px;
+            color: #555;
+            transition: background-color 0.3s;
+        }
+        li:hover {
+            background-color: #e9ecef;
+        }
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Prioritized Ideas</h1>
+    <ol>
+        {% for idea in ideas %}
+        <li>{{ idea }}</li>
+        {% endfor %}
+    </ol>
+    <footer>
+        &copy; 2023 Idea Prioritizer
+    </footer>
+</body>
+</html>
